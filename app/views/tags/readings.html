@@ -1,0 +1,33 @@
+<table class="ui fixed table">
+    <thead>
+    <tr>
+        <th>Weather Code</th>
+        <th>Temperature</th>
+        <th>Wind Speed</th>
+        <th>Pressure</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    #{list items:_stations.readings, as:'reading'}
+    <tr>
+        <td>
+            ${reading.code}
+        </td>
+        <td>
+            ${reading.temperature}
+        </td>
+        <td>
+            ${reading.windSpeed}
+        </td>
+        <td>
+            ${reading.pressure}
+        </td>
+        <td>
+            <a href="/station/${_stations.id}/deletereading/${reading.id}" class="ui icon button">
+                <i class="icon trash"></i></a>
+        </td>
+        #{/list}
+
+    </tbody>
+</table>
